@@ -18,8 +18,8 @@ export default function Navbar() {
     <header className="sticky top-0 left-0 right-0 z-40 bg-zinc-950/85 backdrop-blur-md border-b border-zinc-800/60">
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
         
-        <a href="#inicio" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-zinc-950 transition-colors">
+        <a href="#inicio" className="flex items-center gap-2 group active:scale-95 transition-transform duration-200">
+          <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-zinc-950 group-active:bg-emerald-500 group-active:text-zinc-950 transition-colors duration-200">
             <Sparkles className="w-4 h-4" />
           </div>
           <div className="flex flex-col">
@@ -33,7 +33,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+              className="text-sm font-medium text-zinc-400 hover:text-white active:text-white transition-colors duration-200"
             >
               {link.name}
             </a>
@@ -43,7 +43,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center">
           <a
             href="#precio"
-            className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold text-xs rounded-full flex items-center gap-2 transition-all shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/20"
+            className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 active:bg-emerald-400 text-zinc-950 font-bold text-xs rounded-full flex items-center gap-2 active:scale-95 transition-all duration-200 shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/20"
           >
             <span>Obtener Plantilla</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -53,7 +53,7 @@ export default function Navbar() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
-          className="md:hidden p-2 text-zinc-400 hover:text-white rounded-lg focus:outline-none"
+          className="md:hidden p-2 text-zinc-400 hover:text-white active:text-white hover:bg-zinc-900 active:bg-zinc-800 rounded-lg transition-colors duration-200 focus:outline-none select-none"
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -73,7 +73,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-base font-medium text-zinc-300 hover:text-emerald-400 transition-colors py-1"
+                  className="text-base font-medium text-zinc-300 hover:text-emerald-400 active:text-emerald-400 transition-colors duration-200 py-1 select-none"
                 >
                   {link.name}
                 </a>
@@ -82,7 +82,7 @@ export default function Navbar() {
                 <a
                   href="#precio"
                   onClick={() => setIsOpen(false)}
-                  className="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold text-sm rounded-xl flex items-center justify-center gap-2 transition-colors"
+                  className="w-full py-3 bg-emerald-500 hover:bg-emerald-400 active:bg-emerald-400 text-zinc-950 font-bold text-sm rounded-xl flex items-center justify-center gap-2 active:scale-[0.98] transition-all duration-200"
                 >
                   <span>Obtener Plantilla</span>
                   <ArrowRight className="w-4 h-4" />

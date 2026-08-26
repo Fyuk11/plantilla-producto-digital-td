@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Check, X } from 'lucide-react';
+import { Check, X, CheckCircle2, XCircle } from 'lucide-react';
 
 export default function TargetAudience() {
   const isForYou = [
@@ -16,65 +16,83 @@ export default function TargetAudience() {
   ];
 
   return (
-    <section className="py-24 bg-slate-950/50 border-y border-slate-800 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-[#09090b] border-y border-zinc-800/80 overflow-hidden text-zinc-100">
+      <div className="max-w-6xl mx-auto px-6">
         
-        {/* Encabezado con fade in al bajar */}
+        {/* Encabezado */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-2xl mx-auto mb-16 space-y-3"
         >
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
             ¿Es este producto para ti?
           </h2>
-          <p className="text-slate-400">
+          <p className="text-zinc-400 text-base">
             Asegúrate de que este programa se alinea con tus objetivos antes de dar el siguiente paso.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           
-          {/* Tarjeta Izquierda (Entra desde la izquierda) */}
+          {/* Tarjeta Izquierda: ES para ti */}
           <motion.div
-            initial={{ opacity: 0, x: -80, rotateY: -10 }}
-            whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="bg-slate-900 border border-emerald-500/30 rounded-2xl p-8 relative overflow-hidden shadow-xl"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="bg-zinc-950/80 border border-emerald-500/30 rounded-3xl p-8 relative overflow-hidden backdrop-blur-xl shadow-xl shadow-emerald-500/5 flex flex-col"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none" />
-            <h3 className="text-xl font-bold text-emerald-400 mb-6 flex items-center gap-2">
-              <span className="text-2xl">🏼</span> Esto ES para ti si:
-            </h3>
+            <div className="absolute top-0 right-0 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+            
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/30">
+                <CheckCircle2 className="w-5 h-5" />
+              </div>
+              <h3 className="text-xl font-bold text-white">
+                Esto <span className="text-emerald-400">ES</span> para ti si:
+              </h3>
+            </div>
+
             <ul className="space-y-4">
               {isForYou.map((item, index) => (
-                <li key={index} className="flex items-start text-slate-300">
-                  <Check className="text-emerald-400 mr-3 w-5 h-5 shrink-0 mt-0.5" />
+                <li key={index} className="flex items-start text-zinc-300 text-sm leading-relaxed">
+                  <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 mr-3">
+                    <Check className="w-3.5 h-3.5" />
+                  </div>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </motion.div>
 
-          {/* Tarjeta Derecha (Entra desde la derecha) */}
+          {/* Tarjeta Derecha: NO es para ti */}
           <motion.div
-            initial={{ opacity: 0, x: 80, rotateY: 10 }}
-            whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="bg-slate-900 border border-rose-500/30 rounded-2xl p-8 relative overflow-hidden shadow-xl"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="bg-zinc-950/80 border border-rose-500/30 rounded-3xl p-8 relative overflow-hidden backdrop-blur-xl shadow-xl shadow-rose-500/5 flex flex-col"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/10 rounded-full blur-2xl pointer-events-none" />
-            <h3 className="text-xl font-bold text-rose-400 mb-6 flex items-center gap-2">
-              <span className="text-2xl">🏼‍♂️</span> Esto NO es para ti si:
-            </h3>
+            <div className="absolute top-0 right-0 w-40 h-40 bg-rose-500/10 rounded-full blur-3xl pointer-events-none" />
+            
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center shrink-0 border border-rose-500/30">
+                <XCircle className="w-5 h-5" />
+              </div>
+              <h3 className="text-xl font-bold text-white">
+                Esto <span className="text-rose-400">NO</span> es para ti si:
+              </h3>
+            </div>
+
             <ul className="space-y-4">
               {isNotForYou.map((item, index) => (
-                <li key={index} className="flex items-start text-slate-300">
-                  <X className="text-rose-400 mr-3 w-5 h-5 shrink-0 mt-0.5" />
+                <li key={index} className="flex items-start text-zinc-300 text-sm leading-relaxed">
+                  <div className="w-5 h-5 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center shrink-0 mt-0.5 mr-3">
+                    <X className="w-3.5 h-3.5" />
+                  </div>
                   <span>{item}</span>
                 </li>
               ))}

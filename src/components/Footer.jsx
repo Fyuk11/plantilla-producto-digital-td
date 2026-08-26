@@ -22,7 +22,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800/80 flex items-center justify-center text-zinc-400 hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"
+            className="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800/80 flex items-center justify-center text-zinc-400 hover:text-emerald-400 active:text-emerald-400 hover:border-emerald-500/40 active:border-emerald-500/40 active:scale-95 transition-all duration-200"
           >
             <svg className="w-4 h-4 stroke-current fill-none stroke-[2]" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
               <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
@@ -37,7 +37,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="TikTok"
-            className="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800/80 flex items-center justify-center text-zinc-400 hover:text-emerald-400 hover:border-emerald-500/40 transition-colors"
+            className="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800/80 flex items-center justify-center text-zinc-400 hover:text-emerald-400 active:text-emerald-400 hover:border-emerald-500/40 active:border-emerald-500/40 active:scale-95 transition-all duration-200"
           >
             <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
               <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 15.68 6.34 6.34 0 0 0 9.34 22a6.34 6.34 0 0 0 6.34-6.34V9.27a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.28-.7z"/>
@@ -46,12 +46,12 @@ export default function Footer() {
         </div>
 
         {/* Navegación */}
-        <div className="flex items-center gap-6 text-xs text-zinc-400">
-          <a href="#inicio" className="hover:text-white transition-colors">Inicio</a>
-          <a href="#modulos" className="hover:text-white transition-colors">Módulos</a>
-          <a href="#sobre-mi" className="hover:text-white transition-colors">Sobre Mí</a>
-          <a href="#testimonios" className="hover:text-white transition-colors">Testimonios</a>
-          <a href="#precio" className="hover:text-white transition-colors">Precio</a>
+        <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-zinc-400">
+          <a href="#inicio" className="hover:text-white active:text-white transition-colors duration-200">Inicio</a>
+          <a href="#modulos" className="hover:text-white active:text-white transition-colors duration-200">Módulos</a>
+          <a href="#sobre-mi" className="hover:text-white active:text-white transition-colors duration-200">Sobre Mí</a>
+          <a href="#testimonios" className="hover:text-white active:text-white transition-colors duration-200">Testimonios</a>
+          <a href="#precio" className="hover:text-white active:text-white transition-colors duration-200">Precio</a>
         </div>
 
         <div className="text-xs text-zinc-400">

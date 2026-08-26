@@ -51,7 +51,10 @@ export default function Pricing() {
             {/* Lista de Recursos con Valoración */}
             <div className="space-y-3">
               {valueItems.map((item, idx) => (
-                <div key={idx} className="p-4 rounded-xl bg-zinc-950/60 border border-zinc-800/80 backdrop-blur-md flex items-center justify-between gap-4">
+                <div 
+                  key={idx} 
+                  className="p-4 rounded-xl bg-zinc-950/60 border border-zinc-800/80 backdrop-blur-md flex items-center justify-between gap-4 hover:border-zinc-700 transition-colors duration-200"
+                >
                   <div className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
                       <Check className="w-4 h-4" />
@@ -121,7 +124,7 @@ export default function Pricing() {
               {/* Botón CTA */}
               <a
                 href="#checkout"
-                className="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-extrabold text-sm rounded-xl flex items-center justify-center gap-2 transition-all shadow-xl shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:scale-[1.02]"
+                className="w-full py-4 bg-emerald-500 hover:bg-emerald-400 active:bg-emerald-400 text-zinc-950 font-extrabold text-sm rounded-xl flex items-center justify-center gap-2 active:scale-[0.98] transition-all duration-200 shadow-xl shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:scale-[1.02] select-none"
               >
                 <span>¡OBTENER MI ACCESO AHORA!</span>
                 <ArrowRight className="w-4 h-4" />

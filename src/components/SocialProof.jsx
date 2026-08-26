@@ -9,30 +9,30 @@ export default function SocialProof() {
   ];
 
   return (
-    <section className="bg-slate-900/50 border-y border-slate-800 py-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#09090b] border-y border-zinc-800/80 py-16 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6">
         
-        {/* Contenedor principal que se expande al entrar en pantalla */}
+        {/* Contenedor principal alineado a la paleta zinc/emerald */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, y: 50 }}
+          initial={{ opacity: 0, scale: 0.95, y: 30 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center bg-slate-800/40 border border-slate-700/50 p-8 rounded-3xl backdrop-blur-xl shadow-2xl"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center bg-zinc-950/80 border border-zinc-800/80 p-6 sm:p-8 rounded-3xl backdrop-blur-xl shadow-xl shadow-emerald-500/5"
         >
           {stats.map((stat, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="space-y-1"
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="space-y-1 p-3 rounded-2xl hover:bg-zinc-900/50 active:bg-zinc-900/50 transition-colors duration-200 select-none group"
             >
-              <p className="text-3xl sm:text-4xl font-extrabold text-indigo-400">
+              <p className="text-3xl sm:text-4xl font-extrabold text-emerald-400 group-hover:scale-105 group-active:scale-105 transition-transform duration-200">
                 {stat.value}
               </p>
-              <p className="text-sm sm:text-base text-slate-400 font-medium">
+              <p className="text-xs sm:text-sm text-zinc-400 font-medium">
                 {stat.label}
               </p>
             </motion.div>

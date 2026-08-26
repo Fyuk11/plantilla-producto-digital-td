@@ -6,7 +6,7 @@ export default function Modules() {
       number: '01',
       title: 'Fundamentos & Posicionamiento',
       description: 'Define tu propuesta de valor, tu cliente ideal y cómo estructurar tu conocimiento en una oferta irresistible.',
-      lessons: ['Definición de Avatar & Dolor', 'Estructura del Infoproducto', 'Fijación de Precios Strategica'],
+      lessons: ['Definición de Avatar & Dolor', 'Estructura del Infoproducto', 'Fijación de Precios Estratégica'],
       icon: BookOpen,
     },
     {
@@ -37,7 +37,7 @@ export default function Modules() {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         
         <div className="text-center max-w-2xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold hover:border-emerald-500/40 active:border-emerald-500/40 transition-colors">
             <span>Programa Paso a Paso</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
@@ -54,24 +54,26 @@ export default function Modules() {
             return (
               <div
                 key={mod.number}
-                className="bg-zinc-950/80 border border-zinc-800/80 rounded-2xl p-6 sm:p-8 hover:border-zinc-700 transition-all group backdrop-blur-sm"
+                className="bg-zinc-950/80 border border-zinc-800/80 hover:border-zinc-700 active:border-zinc-700 active:bg-zinc-900/60 rounded-2xl p-6 sm:p-8 transition-all duration-300 group backdrop-blur-sm select-none"
               >
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-zinc-950 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-zinc-950 group-active:bg-emerald-500 group-active:text-zinc-950 transition-all duration-300 shadow-md group-hover:shadow-emerald-500/20">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <span className="text-2xl font-black text-zinc-700 group-hover:text-emerald-500/40 transition-colors">
+                  <span className="text-2xl font-black text-zinc-700 group-hover:text-emerald-500/40 group-active:text-emerald-500/40 transition-colors duration-300">
                     {mod.number}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-2">{mod.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 group-active:text-emerald-400 transition-colors duration-200">
+                  {mod.title}
+                </h3>
                 <p className="text-zinc-400 text-sm mb-6 leading-relaxed">{mod.description}</p>
 
                 <div className="border-t border-zinc-900 pt-4 space-y-2">
                   {mod.lessons.map((lesson, idx) => (
                     <div key={idx} className="flex items-center gap-2 text-xs text-zinc-300">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 group-hover:scale-110 group-active:scale-110 transition-transform duration-200" />
                       <span>{lesson}</span>
                     </div>
                   ))}

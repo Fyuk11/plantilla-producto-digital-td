@@ -28,7 +28,7 @@ export default function FAQ() {
       <div className="max-w-4xl mx-auto px-6">
         
         <div className="text-center space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold hover:border-emerald-500/40 active:border-emerald-500/40 transition-colors">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Resolvamos tus dudas</span>
           </div>
@@ -43,18 +43,18 @@ export default function FAQ() {
             return (
               <div
                 key={index}
-                className="bg-zinc-950 border border-zinc-800/80 rounded-2xl overflow-hidden transition-colors"
+                className="bg-zinc-950 border border-zinc-800/80 hover:border-zinc-700 active:border-zinc-700 rounded-2xl overflow-hidden transition-all duration-200"
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-white hover:text-emerald-400 transition-colors"
+                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-white hover:text-emerald-400 active:text-emerald-400 transition-colors duration-200 select-none"
                 >
                   <span>{faq.q}</span>
-                  <ChevronDown className={`w-5 h-5 text-zinc-400 transition-transform duration-200 ${isOpen ? 'rotate-180 text-emerald-400' : ''}`} />
+                  <ChevronDown className={`w-5 h-5 text-zinc-400 transition-transform duration-300 ${isOpen ? 'rotate-180 text-emerald-400' : ''}`} />
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 text-sm text-zinc-400 leading-relaxed border-t border-zinc-900 pt-4">
+                  <div className="px-6 pb-6 text-sm text-zinc-400 leading-relaxed border-t border-zinc-900 pt-4 transition-all duration-200">
                     {faq.a}
                   </div>
                 )}
