@@ -49,24 +49,27 @@ export default function Modules() {
     }
   ];
 
-  // Variantes para animar el contenedor y sus hijos en cascada
+  // Variantes con entrada secuencial marcada
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: 0.18, // Tiempo entre la entrada de cada tarjeta
       },
     },
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 40, scale: 0.95 },
+    hidden: { opacity: 0, y: 80, scale: 0.9 }, // Empiezan más abajo y reducidas
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { duration: 0.5, ease: "easeOut" }
+      transition: { 
+        duration: 0.7, 
+        ease: [0.21, 0.47, 0.32, 0.98] // Curva suave y fluida
+      }
     }
   };
 
@@ -76,10 +79,10 @@ export default function Modules() {
         
         {/* Encabezado */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto space-y-3 mb-16"
         >
           <span className="text-xs font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full uppercase tracking-wider">
@@ -98,7 +101,7 @@ export default function Modules() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ once: true, amount: 0.2 }}
           className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto"
         >
           {modules.map((mod, idx) => {
@@ -107,11 +110,10 @@ export default function Modules() {
               <motion.div
                 key={idx}
                 variants={cardVariants}
-                whileHover={{ y: -5 }}
-                className="bg-zinc-950/80 border border-zinc-800/80 hover:border-zinc-700/80 rounded-3xl p-7 sm:p-8 backdrop-blur-xl shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 flex flex-col justify-between group relative"
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className="bg-zinc-950/80 border border-zinc-800/80 hover:border-zinc-700/80 rounded-3xl p-7 sm:p-8 backdrop-blur-xl shadow-xl hover:shadow-emerald-500/5 transition-colors duration-300 flex flex-col justify-between group relative"
               >
                 <div>
-                  {/* Fila Superior: Icono y Número de Módulo */}
                   <div className="flex items-center justify-between mb-6">
                     <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors duration-200">
                       <Icon className="w-6 h-6" />
@@ -121,7 +123,6 @@ export default function Modules() {
                     </span>
                   </div>
 
-                  {/* Título y Descripción */}
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">
                     {mod.title}
                   </h3>
@@ -130,7 +131,6 @@ export default function Modules() {
                   </p>
                 </div>
 
-                {/* Lista del temario */}
                 <ul className="space-y-3 pt-6 border-t border-zinc-900/80">
                   {mod.items.map((item, itemIdx) => (
                     <li key={itemIdx} className="flex items-center text-zinc-300 text-sm">
