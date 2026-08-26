@@ -9,12 +9,13 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <video
           autoPlay
-          loop
           muted
+          loop
           playsInline
-          className="w-full h-full object-cover opacity-35 filter contrast-125 brightness-90"
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         >
-          <source src="/hero-bg.mp4" type="video/mp4" />
+          <source src="/hero-bg-opt.mp4" type="video/mp4" />
         </video>
         
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#27272a15_1px,transparent_1px),linear-gradient(to_bottom,#27272a15_1px,transparent_1px)] bg-[size:4rem_4rem]" />
